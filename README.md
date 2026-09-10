@@ -1,103 +1,112 @@
-# Quiz Bot - Телеграм-бот для викторин
+English | [Русский](README.ru.md)
 
-Бот для проведения квизов (викторин) на тему Python.
+# Quiz Bot - Telegram Quiz Bot
 
-## Имя бота
+![Python](https://img.shields.io/badge/python-3.x-blue)
+![aiogram](https://img.shields.io/badge/aiogram-3.x-green)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+A Telegram bot for running quizzes on Python.
+
+## Bot name
 
 [@python_quiz_12_5_bot](https://t.me/python_quiz_12_5_bot)
 
-## Команды
+## Commands
 
-| Команда | Описание |
+| Command | Description |
 |---------|----------|
-| `/start` | Запуск бота, приветственное сообщение и кнопка "Начать игру" |
-| `/quiz` | Начать новый квиз (10 вопросов по Python) |
-| `/stats` | Показать статистику последнего прохождения квиза |
+| `/start` | Start the bot: welcome message and a "Start game" button |
+| `/quiz` | Start a new quiz (10 Python questions) |
+| `/stats` | Show the stats of the last quiz run |
 
-## Описание
+## Description
 
-Бот задает 10 вопросов по языку программирования Python. После каждого вопроса нужно выбрать один из четырех вариантов ответа. По окончании квиза бот показывает количество правильных ответов и процент правильных. Результат сохраняется, и его можно посмотреть командой `/stats`.
+The bot asks 10 questions about Python. For each question you pick one of four
+answer options. After the quiz the bot shows the number of correct answers and
+the percentage. The result is saved and can be viewed with `/stats`.
 
-## Структура проекта
+## Project structure
 
-| Файл | Назначение |
+| File | Purpose |
 |------|-----------|
-| `.gitignore` | Игнорируемые файлы (база данных, кэш, токены) |
-| `config.py` | Настройки бота (токен, прокси, имя БД) |
-| `database.py` | Работа с SQLite (таблицы, CRUD) |
-| `handlers.py` | Хендлеры команд и callback-запросов |
-| `keyboards.py` | Генерация клавиатур (Reply и Inline) |
-| `main.py` | Точка входа, запуск бота |
-| `quiz_data.py` | 10 вопросов для викторины |
-| `README.md` | Документация |
+| `.env.example` | Template of environment variables (copy to `.env`) |
+| `config.py` | Bot settings (token and API base URL from env, DB name) |
+| `database.py` | SQLite work (tables, CRUD) |
+| `handlers.py` | Command and callback handlers |
+| `keyboards.py` | Keyboard builders (Reply and Inline) |
+| `main.py` | Entry point, starts the bot |
+| `quiz_data.py` | 10 quiz questions |
+| `README.md` | Documentation |
 
-## Установка и запуск
+## Installation and running
 
-1. Установите зависимости:
+1. Install dependencies:
    ```
-   pip install aiogram aiosqlite
+   pip install -r requirements.txt
    ```
 
-2. Получите токен бота у @BotFather в Telegram
+2. Get a bot token from @BotFather in Telegram
 
-3. В файле config.py замените значение BOT_TOKEN на ваш токен:
+3. Copy `.env.example` to `.env` and put your token there:
+   ```
+   BOT_TOKEN=your_telegram_bot_token_here
+   ```
 
-   `BOT_TOKEN = "BOT_TOKEN"`
-
-4. Запустите бота:
+4. Run the bot:
    ```
    python main.py
    ```
 
-## Настройка прокси (опционально)
+## API base URL (optional)
 
-Если Telegram заблокирован в вашем регионе, укажите прокси в config.py:
+If Telegram API is not reachable directly, set a mirror address in `.env`:
 
-   `PROXY_URL = "PROXY_URL"`
+   `PROXY_URL=https://api.telegram.org`
 
-Если прокси не требуется - закомментируйте.
+If a mirror is not needed - leave the line commented out.
 
-## База данных
+## Database
 
-При первом запуске автоматически создается файл quiz_bot.db с двумя таблицами:
+On first start a `quiz_bot.db` file is created automatically with two tables:
 
-- quiz_state - хранит текущий индекс вопроса и счет правильных ответов пользователя
-- quiz_results - хранит результаты последнего прохождения квиза (правильные/всего/процент)
+- quiz_state - stores the current question index and the user's correct answer count
+- quiz_results - stores the results of the last quiz run (correct/total/percentage)
 
-Данные сохраняются между сессиями, поэтому пользователь может продолжить квиз 
-с того места, где остановился.
+Data persists between sessions, so the user can continue the quiz from where
+they stopped.
 
-## Демонстрация работы
+## Demo
 
-### 1. Запуск бота
-При команде /start появляется приветствие и кнопка "Начать игру"
+### 1. Starting the bot
+With the /start command a welcome message and a "Start game" button appear
 
-![Запуск бота](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_start.jpg?raw=true)
+![Bot start](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_start.jpg?raw=true)
 
-### 2. Процесс квиза
-Бот показывает вопрос с четырьмя вариантами ответа. После выбора варианта 
-бот выводит ваш ответ и результат (верно/неверно)
+### 2. Quiz process
+The bot shows a question with four answer options. After picking an option
+the bot shows your answer and the result (correct/wrong)
 
-![Вопрос квиза](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_question.jpg?raw=true)
-![Правильный / Неправильный ответ](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_correct_wrong.jpg?raw=true)
+![Quiz question](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_question.jpg?raw=true)
+![Correct / Wrong answer](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_correct_wrong.jpg?raw=true)
 
-### 3. Завершение квиза и Статистика
-После 10 вопросов бот показывает итоговый результат: количество правильных 
-ответов и процент правильных
-Команда /stats показывает результат последнего прохождения квиза
+### 3. Quiz finish and stats
+After 10 questions the bot shows the final result: the number of correct
+answers and the percentage
+The /stats command shows the result of the last quiz run
 
-![Результат квиза](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_finish_stats.jpg?raw=true)
+![Quiz result](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_finish_stats.jpg?raw=true)
 
-## Особенности реализации
+## Implementation notes
 
-- Асинхронная работа на базе aiogram 3
-- Хранение состояния пользователя в SQLite (aiosqlite)
-- Inline-кнопки с вариантами ответов
-- Обработка ошибок и автоматическое переподключение при обрыве сети
-- Сохранение статистики в базе данных
-- Поддержка прокси для обхода блокировок
+- Async work based on aiogram 3
+- User state stored in SQLite (aiosqlite)
+- Inline buttons with answer options
+- Error handling and automatic reconnection on network failures
+- Stats saved in the database
+- Custom Telegram API base URL support for restricted regions
 
-## Требования
+## Requirements
 
 - Python 3.13+
 - aiogram 3.29+
