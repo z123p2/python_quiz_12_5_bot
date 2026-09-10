@@ -3,6 +3,7 @@ English | [Русский](README.ru.md)
 # Quiz Bot - Telegram Quiz Bot
 
 ![Python](https://img.shields.io/badge/python-3.x-blue)
+[![Telegram Bot](https://img.shields.io/badge/Telegram-Bot-blue?logo=telegram)](https://t.me/python_quiz_12_5_bot)
 ![aiogram](https://img.shields.io/badge/aiogram-3.x-green)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
