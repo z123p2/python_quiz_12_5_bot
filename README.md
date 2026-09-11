@@ -82,21 +82,21 @@ they stopped.
 ### 1. Starting the bot
 With the /start command a welcome message and a "Start game" button appear
 
-![Bot start](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_start.jpg?raw=true)
+![Bot start](https://github.com/iceflux/python_quiz_12_5_bot/blob/main/screenshots/quiz_start.jpg?raw=true)
 
 ### 2. Quiz process
 The bot shows a question with four answer options. After picking an option
 the bot shows your answer and the result (correct/wrong)
 
-![Quiz question](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_question.jpg?raw=true)
-![Correct / Wrong answer](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_correct_wrong.jpg?raw=true)
+![Quiz question](https://github.com/iceflux/python_quiz_12_5_bot/blob/main/screenshots/quiz_question.jpg?raw=true)
+![Correct / Wrong answer](https://github.com/iceflux/python_quiz_12_5_bot/blob/main/screenshots/quiz_correct_wrong.jpg?raw=true)
 
 ### 3. Quiz finish and stats
 After 10 questions the bot shows the final result: the number of correct
 answers and the percentage
 The /stats command shows the result of the last quiz run
 
-![Quiz result](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_finish_stats.jpg?raw=true)
+![Quiz result](https://github.com/iceflux/python_quiz_12_5_bot/blob/main/screenshots/quiz_finish_stats.jpg?raw=true)
 
 ## Implementation notes
 

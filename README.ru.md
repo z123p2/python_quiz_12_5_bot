@@ -80,21 +80,21 @@
 ### 1. Запуск бота
 При команде /start появляется приветствие и кнопка "Начать игру"
 
-![Запуск бота](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_start.jpg?raw=true)
+![Запуск бота](https://github.com/iceflux/python_quiz_12_5_bot/blob/main/screenshots/quiz_start.jpg?raw=true)
 
 ### 2. Процесс квиза
 Бот показывает вопрос с четырьмя вариантами ответа. После выбора варианта 
 бот выводит ваш ответ и результат (верно/неверно)
 
-![Вопрос квиза](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_question.jpg?raw=true)
-![Правильный / Неправильный ответ](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_correct_wrong.jpg?raw=true)
+![Вопрос квиза](https://github.com/iceflux/python_quiz_12_5_bot/blob/main/screenshots/quiz_question.jpg?raw=true)
+![Правильный / Неправильный ответ](https://github.com/iceflux/python_quiz_12_5_bot/blob/main/screenshots/quiz_correct_wrong.jpg?raw=true)
 
 ### 3. Завершение квиза и Статистика
 После 10 вопросов бот показывает итоговый результат: количество правильных 
 ответов и процент правильных
 Команда /stats показывает результат последнего прохождения квиза
 
-![Результат квиза](https://github.com/z123p2/python_quiz_12_5_bot/blob/main/screenshots/quiz_finish_stats.jpg?raw=true)
+![Результат квиза](https://github.com/iceflux/python_quiz_12_5_bot/blob/main/screenshots/quiz_finish_stats.jpg?raw=true)
 
 ## Особенности реализации
 
